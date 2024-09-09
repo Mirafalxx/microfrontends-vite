@@ -12,6 +12,7 @@ export default defineConfig({
       exposes: {
         "./DummyPage": "./src/DummyPage.jsx",
         "./DummyPage2": "./src/DummyPage2.jsx",
+        "./products": "./src/products.js",
       },
       remotes: {
         remoteApp: "http://localhost:5001/assets/remoteEntryApplication.js",

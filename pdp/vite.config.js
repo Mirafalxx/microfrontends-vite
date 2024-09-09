@@ -2,8 +2,6 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import federation from "@originjs/vite-plugin-federation";
 
-const deps = require("./package.json").dependencies;
-
 export default defineConfig({
   plugins: [
     react(),
@@ -12,7 +10,9 @@ export default defineConfig({
       filename: "remoteEntryPdp.js",
       remotes: {
         pdp: "http://localhost:9001/assets/remoteEntryPdp.js",
-        cart: "http://localhost:9002/assets/remoteEntryCart.js",
+        cartRemoteApp: "http://localhost:5002/assets/remoteEntryCart.js",
+        hostApp: "http://localhost:5005/assets/remoteEntryHost.js",
+        remoteApp: "http://localhost:5001/assets/remoteEntryApplication.js",
       },
       exposes: {
         "./PDPContent": "./src/PDPContent.jsx",

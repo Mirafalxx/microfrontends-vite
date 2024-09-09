@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview --port 5002 --strictPort",
     "serve": "vite preview --host --port 5002 --strictPort",
-    "start":"npm run build && npm run serve"
+    "start":"npm run build && npm run serve",
+    "new_start":"vite"
   },
   "dependencies": {
     "react": "^18.3.1",

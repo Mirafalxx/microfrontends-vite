@@ -1,10 +1,10 @@
 import React from "react";
-import CartContent from "./CartContent";
+import Login from "./Login";
 
 const App = () => {
   return (
-    <div>
-      <CartContent />
+    <div className="login_container">
+      <Login />
     </div>
   );
 };

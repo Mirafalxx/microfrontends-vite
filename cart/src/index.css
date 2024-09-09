@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-  }
+.login_container{
+    width: 300px;
+    height: 300px;
+    margin-left: auto;
+    position: relative;
+}

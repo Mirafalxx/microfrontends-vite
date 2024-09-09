@@ -1,0 +1,21 @@
+*,*::before,*::after{
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    background: linear-gradient(90deg, rgba(212, 230, 253, 1) 0%, rgba(248, 248, 255, 1) 25%);
+  }
+  
+  .remote__app {
+    width: 100vw;
+    height: 100vh;
+    padding: 10px 15px;
+  }
+
+
+  .add_cart_btn{
+    background-color: rgb(89, 89, 243);
+    color: white;
+  }

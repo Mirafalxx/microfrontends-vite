@@ -11,16 +11,20 @@ export default defineConfig({
       exposes: {
         "./cart": "./src/cart.js",
         "./Login": "./src/Login.jsx",
-        "./MiniCart": "./src/MiniCart.jsx",
         "./CartContent": "./src/CartContent.jsx",
       },
-
+      remotes: {
+        hostApp: "http://localhost:5005/assets/remoteEntryHost.js",
+        remoteApp: "http://localhost:5001/assets/remoteEntryApplication.js",
+      },
       shared: ["react", "react-dom", "rxjs"],
     }),
   ],
 
   build: {
+    modulePreload: false,
     target: "esnext",
     minify: false,
+    cssCodeSplit: false,
   },
 });

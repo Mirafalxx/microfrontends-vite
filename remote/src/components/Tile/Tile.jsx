@@ -1,11 +1,15 @@
 import React from "react";
+import useTodos from "../../store";
 import "./style.css";
 
-const Tile = ({ title, name, handleDelete }) => {
+const Tile = ({ title, id }) => {
+  const { deleteTodo } = useTodos();
   return (
     <div className="tile">
       <h1>{title}</h1>
-      <p>{name}</p>
+      <p className="delete_btn" onClick={() => deleteTodo(id)}>
+        X
+      </p>
     </div>
   );
 };

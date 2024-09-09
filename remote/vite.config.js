@@ -10,10 +10,12 @@ export default defineConfig({
       filename: "remoteEntryApplication.js",
       remotes: {
         hostApp: "http://localhost:5005/assets/remoteEntryHost.js",
+        cartRemoteApp: "http://localhost:5002/assets/remoteEntryCart.js",
       },
       exposes: {
         "./Tile": "./src/components/Tile/Tile",
         "./store": "./src/store",
+        "./AddToCart": "./src/components/AddToCart",
       },
       shared: ["react", "react-dom", "jotai"],
     }),

@@ -1,18 +1,19 @@
 import React, { lazy } from "react";
 
-import { NavLink, RouterProvider, createBrowserRouter } from "react-router-dom";
-import Home from "./pages/Home";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Cards from "./pages/Cards";
 import Todos from "./pages/Todos";
 import Layout from "./Components/Layout/Layout";
-const PDPContent = lazy(() => import("pdpRemoteApp/PDPContent"));
+import PDPContent from "pdpRemoteApp/PDPContent";
+import CartContent from "cartRemoteApp/CartContent";
+import PrivateLayout from "./Components/PrivateLayout/PrivateLayout";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <Layout>
-        <Home />
+        <Todos />
       </Layout>
     ),
   },
@@ -25,24 +26,20 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/todos",
-    element: (
-      <Layout>
-        <Todos />
-      </Layout>
-    ),
-  },
-  {
-    path: "/remote-page",
-    element: (
-      <Layout>
-        <div>Full Remote Page</div>
-      </Layout>
-    ),
-  },
-  {
     path: "/product/:id",
-    element: <PDPContent />,
+    element: (
+      <Layout>
+        <PDPContent />
+      </Layout>
+    ),
+  },
+  {
+    path: "/my-cart",
+    element: (
+      <PrivateLayout>
+        <CartContent />
+      </PrivateLayout>
+    ),
   },
 ]);
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 
-import { cart, clearCart, currency } from "./cart";
+import { currency } from "hostApp/products";
+import { cart, clearCart } from "./cart";
 
 export default function MiniCart() {
   const [items, setItems] = useState(null);
@@ -9,7 +10,7 @@ export default function MiniCart() {
 
   useEffect(() => {
     if (divRef?.current) {
-      divRef.current.focus(); // Focus the div when the component mounts
+      divRef.current.focus();
     }
   }, [showCart]);
 

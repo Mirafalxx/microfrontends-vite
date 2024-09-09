@@ -1,22 +1,28 @@
 import { NavLink } from "react-router-dom";
+import Login from "cartRemoteApp/Login";
+import { useLoggedIn } from "cartRemoteApp/cart";
 import "./style.scss";
 
 const Header = () => {
+  const loggedIn = useLoggedIn();
+
   return (
     <div className="header__container">
       <div className="header">
         <NavLink to="/" className="app__link">
-          Home
-        </NavLink>
-        <NavLink to="/todos" className="app__link">
           Todos
         </NavLink>
         <NavLink to="/cards" className="app__link">
           Cards
         </NavLink>
-        <NavLink to="/remote-page" className="app__link">
-          Remote Page
-        </NavLink>
+        {loggedIn && (
+          <NavLink className="app__link" to="/my-cart">
+            Cart
+          </NavLink>
+        )}
+        <div className="relative">
+          <Login />
+        </div>
       </div>
     </div>
   );

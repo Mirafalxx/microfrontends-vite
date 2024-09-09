@@ -10,9 +10,8 @@ const Todos = () => {
 
   const handleAddTodo = (e) => {
     e.preventDefault();
-    addTodo({ title, name });
+    addTodo({ title, id: new Date().valueOf() });
     setTitle("");
-    setName("");
   };
 
   useEffect(() => {
@@ -23,11 +22,14 @@ const Todos = () => {
     <div className="application_container">
       <form className="add-todo__form" onSubmit={handleAddTodo}>
         <input required placeholder="Todo title" onChange={(e) => setTitle(e.target.value)} value={title} />
-        <input required placeholder="Todo name" onChange={(e) => setName(e.target.value)} value={name} />
         <button type="submit">add todo</button>
       </form>
       <div className="todos">
-        {todos.length ? todos.map((todo) => <Tile key={todo.id} {...todo} />) : <div>You have not added</div>}
+        {todos.length ? (
+          todos.map((todo, idx) => <Tile key={idx} {...todo} />)
+        ) : (
+          <div className="no_todos">No todos added</div>
+        )}
       </div>
     </div>
   );

@@ -9,12 +9,17 @@ const useTodos = () => {
     setTodos((prevTodos) => [...prevTodos, todo]);
   };
 
+  const deleteTodo = (id) => {
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
+  };
+
   const getTodos = () => {
     return todos;
   };
 
   return {
     todos,
+    deleteTodo,
     addTodo,
     getTodos,
   };

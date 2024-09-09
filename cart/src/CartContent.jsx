@@ -1,15 +1,30 @@
 import React, { useState, useEffect } from "react";
-import { cart, clearCart } from "./cart";
+import { cart, clearCart, getCart } from "./cart";
+import { currency } from "hostApp/products";
 
-import { currency } from "hostApp/hostAppFunctions";
 const CartContent = () => {
   const [items, setItems] = useState([]);
 
-  useEffect(() => cart.subscribe((value) => setItems(value?.cartItems ?? [])), []);
+  useEffect(() => {
+    getCart();
+  }, []);
+
+  useEffect(() => {
+    const subscription = cart.subscribe((value) => {
+      setItems(value?.cartItems || []);
+    });
+    return () => {
+      subscription.unsubscribe();
+    };
+  }, []);
+
+  if (!items.length) {
+    return <div className="text-center text-[30px] w-full">Your Cart is empty</div>;
+  }
 
   return (
-    <>
-      <div className="my-10 grid grid-cols-4 gap-5">
+    <div className="mt-[50px] w-[900px] mx-auto">
+      <div className=" grid grid-cols-4 gap-5">
         {items.map((item) => (
           <React.Fragment key={item.id}>
             <div>{item.quantity}</div>
@@ -18,9 +33,6 @@ const CartContent = () => {
             <div className="text-right">{currency.format(item.quantity * item.price)}</div>
           </React.Fragment>
         ))}
-        <div></div>
-        <div></div>
-        <div></div>
         <div className="text-right" id="grand_total">
           {currency.format(items.reduce((a, v) => a + v.quantity * v.price, 0))}
         </div>
@@ -36,14 +48,9 @@ const CartContent = () => {
               Clear Cart
             </button>
           </div>
-          <div className="flex-end">
-            <button className="bg-green-900 text-white py-2 px-5 rounded-md text-sm" onClick={clearCart}>
-              Checkout
-            </button>
-          </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

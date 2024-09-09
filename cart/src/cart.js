@@ -3,7 +3,7 @@ import { BehaviorSubject } from "rxjs";
 
 const API_SERVER = "http://localhost:8080";
 
-export const jwt = new BehaviorSubject(null);
+export const jwt = new BehaviorSubject(localStorage.getItem("token") || null);
 export const cart = new BehaviorSubject(null);
 
 export const getCart = () =>
@@ -60,22 +60,23 @@ export const login = (username, password) =>
     .then((res) => res.json())
     .then((data) => {
       jwt.next(data.access_token);
+      localStorage.setItem("token", data.access_token);
       getCart();
       return data.access_token;
     });
 
 export function useLoggedIn() {
   const [loggedIn, setLoggedIn] = useState(!!jwt.value);
+
   useEffect(() => {
-    setLoggedIn(!!jwt.value);
-    return jwt.subscribe((c) => {
-      setLoggedIn(!!jwt.value);
+    const subscription = jwt.subscribe((value) => {
+      setLoggedIn(!!value);
     });
+
+    return () => {
+      subscription.unsubscribe();
+    };
   }, []);
+
   return loggedIn;
 }
-
-export const currency = new Intl.NumberFormat("en-US", {
-  style: "currency",
-  currency: "USD",
-});
