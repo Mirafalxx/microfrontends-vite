@@ -15,12 +15,14 @@ function App() {
   }, []);
   return (
     <div className="remote__app">
-      <DummyPage />
-      <DummyPage2 />
-      <div className="font-bold text-3xl flex-end">{currency.format(9.123)}</div>
-      {data.map((todo) => (
-        <Tile {...todo} key={todo.id} />
-      ))}
+      <div className="wrapper">
+        <DummyPage />
+        <DummyPage2 />
+        <div className="font-bold text-3xl flex-end">{currency.format(9.123)}</div>
+        {data.map((todo) => (
+          <Tile {...todo} key={todo.id} />
+        ))}
+      </div>
     </div>
   );
 }
