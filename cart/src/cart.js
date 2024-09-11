@@ -3,7 +3,7 @@ import { BehaviorSubject } from "rxjs";
 
 const API_SERVER = "http://localhost:8080";
 
-export const jwt = new BehaviorSubject(localStorage.getItem("token") || null);
+export const jwt = new BehaviorSubject(localStorage.getItem("token"));
 export const cart = new BehaviorSubject(null);
 
 export const getCart = () =>
