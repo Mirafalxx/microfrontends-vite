@@ -14,7 +14,7 @@ const products: Product[] = [
     price: 5.99,
     description:
       'Пицца-соус, сыры: моцарелла, эмменталь, дорблю, пармезан. 4 СЫРА',
-    image: 'http://localhost:8080/fidget-1.jpg',
+    image: 'http://localhost:8080/pizza-1.png',
     longDescription:
       'Наивкуснейшая пицца 4 сыра приготовленная в итальянской печи по особой технологии',
   },
@@ -23,7 +23,7 @@ const products: Product[] = [
     name: 'Барбекю',
     price: 8.99,
     description: 'Сытная домашняя пицца с соусом барбекю и курицей',
-    image: 'http://localhost:8080/fidget-2.jpg',
+    image: 'http://localhost:8080/pizza-2.png',
     longDescription:
       '.Сытная домашняя пицца с соусом барбекю, куриным филе, колбасками, грибами, томатами, с маринованным луком и огурчиками.',
   },
@@ -32,7 +32,7 @@ const products: Product[] = [
     name: 'Вегетарианская',
     price: 7.99,
     description: 'Сомнительно но ОКЭЙ',
-    image: 'http://localhost:8080/fidget-3.jpg',
+    image: 'http://localhost:8080/pizza-3.png',
     longDescription:
       'Пицца-соус, сыр «Моцарелла», помидоры, кукуруза, маслины, шампиньоны, болгарский перец, зелень, лук',
   },
@@ -41,7 +41,7 @@ const products: Product[] = [
     name: 'Гасконская',
     price: 7.99,
     description: 'Пицца Гасконская. Пицца-соус, сыр',
-    image: 'http://localhost:8080/fidget-5.jpg',
+    image: 'http://localhost:8080/pizza-4.png',
     longDescription:
       'Пицца Гасконская. Пицца-соус, сыр моцарелла, копчёная курица, шампиньоны, болгарский перец, помидоры, кукуруза, майонез, зелень',
   },
@@ -50,7 +50,7 @@ const products: Product[] = [
     name: 'Деревенская',
     price: 6.99,
     description: 'Пицца-соус, сыр моцарелла, маринованная говядина, копчёная',
-    image: 'http://localhost:8080/fidget-6.jpg',
+    image: 'http://localhost:8080/pizza-5.png',
     longDescription:
       'Пицца-соус, сыр моцарелла, маринованная говядина, копчёная курица, шампиньоны, чеснок, лук, зелень.',
   },
@@ -59,7 +59,7 @@ const products: Product[] = [
     name: 'Детская',
     price: 8.99,
     description: 'Пицца Детская. Пицца-соус, сыр',
-    image: 'http://localhost:8080/fidget-7.jpg',
+    image: 'http://localhost:8080/pizza-6.png',
     longDescription:
       'Пицца Детская. Пицца-соус, сыр моцарелла, сосиски, помидоры, кукуруза.',
   },
@@ -69,7 +69,7 @@ const products: Product[] = [
     price: 7.99,
     description:
       'Пицца-соус, сыр моцарелла, ветчина, помидоры, шампиньоны, зелень',
-    image: 'http://localhost:8080/fidget-8.jpg',
+    image: 'http://localhost:8080/pizza-7.png',
     longDescription:
       'Пицца-соус, сыр моцарелла, ветчина, помидоры, шампиньоны, зелень мелень',
   },
@@ -78,7 +78,7 @@ const products: Product[] = [
     name: 'Обжорка ',
     price: 8.99,
     description: 'ОБЖОРКА Пицца-соус, говяжий фарш',
-    image: 'http://localhost:8080/fidget-9.jpg',
+    image: 'http://localhost:8080/pizza-8.png',
     longDescription:
       'ОБЖОРКА Пицца-соус, говяжий фарш, сыр моцарелла, помидоры, лук, майонез, кетчуп, зелень, маринованные огурцы.',
   },
@@ -87,7 +87,7 @@ const products: Product[] = [
     name: 'Итальянка',
     price: 9.99,
     description: 'Пицца Итальянка. Пицца-соус, сыр моцарелла',
-    image: 'http://localhost:8080/fidget-10.jpg',
+    image: 'http://localhost:8080/pizza-9.png',
     longDescription:
       'Пицца Итальянка. Пицца-соус, сыр моцарелла, говядина с грибами Вешенками в сливочном соусе, зелень.',
   },
@@ -96,7 +96,7 @@ const products: Product[] = [
     name: 'Карри',
     price: 12.99,
     description: 'Пицца-соус, сыр моцарелла, курица',
-    image: 'http://localhost:8080/fidget-11.jpg',
+    image: 'http://localhost:8080/pizza-10.png',
     longDescription:
       'Пицца-соус, сыр моцарелла, курица карри в остром фирменном соусе, кинза.',
   },
